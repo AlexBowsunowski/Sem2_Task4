@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/aleksandr/Documents/Semestr2_prog/Task4/list.h
+
+/home/aleksandr/Documents/Semestr2_prog/Task4/main.cpp
+iostream
+-
+cstring
+-
+list.h
+/home/aleksandr/Documents/Semestr2_prog/Task4/list.h
+

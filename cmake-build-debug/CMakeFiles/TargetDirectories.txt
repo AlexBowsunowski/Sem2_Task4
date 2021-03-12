@@ -1,0 +1,3 @@
+/home/aleksandr/Documents/Semestr2_prog/Task4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/aleksandr/Documents/Semestr2_prog/Task4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/aleksandr/Documents/Semestr2_prog/Task4/cmake-build-debug/CMakeFiles/Task4.dir
