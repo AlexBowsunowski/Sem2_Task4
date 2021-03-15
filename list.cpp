@@ -41,30 +41,40 @@ void push_front(list* &head, int el, int front) {
     }
 }
 
-void push_back(list* &head, int el, int front){
-    list *new_node = new list;
-    new_node->id = el;
-    list *curr = head;
-    while(curr->next != nullptr && curr->id != front){
+void push_back(list* &head, int el, int back){
+    if (head == nullptr) {
+        return;
+    }
+
+    list* curr = head;
+    while (curr != nullptr && curr->id != back) {
         curr = curr->next;
     }
-    if(curr->id == front) {
-        if(curr->next == nullptr) curr->next = new_node;
-        else{
-            new_node->next = curr->next;
-            curr->next = new_node;
-        }
+
+    if (curr == nullptr) {
+        return;
     }
+
+    list* newNode = new list;
+    newNode->id = el;
+    newNode->next = curr->next;
+    curr->next = newNode;
 }
 
 void push_end(list* &head, int el){
-    list *curr = head;
-    if(!curr) head->id = el;
-    while(curr->next){
-        curr = curr->next;
+    if(head == nullptr){
+        head = new list;
+        head->id = el;
+    }else {
+        list *curr = head;
+        while (curr->next != nullptr) {
+            curr = curr->next;
+        }
+        list* newNode = new list;
+        newNode->id = el;
+        newNode->next = nullptr;
+        curr->next = newNode;
     }
-    curr->next = new list;
-    curr->next->id = el;
 }
 void push_repeat(list* &head, int e1, int e){
     list* curr = head;
@@ -123,7 +133,8 @@ int pop_element(list* & head, int el){
     if(curr == nullptr) {
         return -1;
     }else if(curr->id == el){
-        curr = nullptr;
+        head = curr->next;
+        delete curr;
     }else {
         while (curr->next != nullptr && curr->next->id != el) {
             curr = curr->next;
@@ -138,5 +149,4 @@ int pop_element(list* & head, int el){
     }
     return el;
 }
-
 
